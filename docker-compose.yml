@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  vidyarthi-postgres:
+    image: postgres:13
+    container_name: tracx-postgres
+    restart: always
+    ports:
+      - 5435:5432
+    env_file:
+      - .env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+volumes:
+  postgres:
+    name: nest-db-tracx-bkp
